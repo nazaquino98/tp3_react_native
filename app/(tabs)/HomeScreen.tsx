@@ -1,8 +1,25 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-export default function HomeScreen() {
+export default function ProfileScreen() {
   return (
-    <View><Text>Bienvenido al Inicio</Text></View>
+    <View style={styles.container}>
+      <Text style={styles.name}>Bienvenido al inicio</Text>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+container: {
+    flex: 1,
+    backgroundColor: '#fff0f5', // fondo rosa claro
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: '#e91e63', // texto rosa fuerte
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  name: { fontSize: 20, marginTop: 10 },
+});

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet} from 'react-native';
 import { useRouter } from 'expo-router';
 
 export default function LoginScreen() {
@@ -25,10 +25,24 @@ export default function LoginScreen() {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <TextInput placeholder="Usuario" onChangeText={setUsername} />
       <TextInput placeholder="Contraseña" secureTextEntry onChangeText={setPassword} />
-      <Button title={loading ? 'Intentando loguear...' : 'Ingresar'} onPress={handleLogin} />
+      <Button title={loading ? 'Ingresando' : 'Ingresar'} onPress={handleLogin} />
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff0f5', // fondo rosa claro
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: '#e91e63', // texto rosa fuerte
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+
+});
